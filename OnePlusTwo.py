@@ -1,23 +1,26 @@
 import string
 import random
-import urllib.request
 import requests
 import json
 import re
 import time
+
+RESERVATIONID = "" #5-character reservation ID
+APITOKEN = "" # Mailinator API Token
 
 def generateString():
 	return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(32))
 
 while(True):
 	currentEmail = generateString()
-	requestURL = "https://invites.oneplus.net/index.php?r=share/signup&success_jsonpCallback=success_jsonpCallback&email={0}%40mailinator.com&koid={1}&_=1438595512634".format(currentEmail, "5-digitreservationID")
+	timestamp = str(int(time.time())*1000)
+	requestURL = "https://invites.oneplus.net/index.php?r=share/signup&success_jsonpCallback=success_jsonpCallback" + \
+	             "&email={0}%40mailinator.com&koid={1}&_={2}".format(currentEmail, RESERVATIONID, timestamp)
 	
 	print("Sending invite to " + currentEmail + "@mailinator.com")
 	res = requests.get(requestURL)
 
-	apiToken = "53009b6150c2482c95e1aca686546759"
-	mailinatorInbox = "https://api.mailinator.com/api/inbox?to=" + currentEmail + "&token=" + apiToken
+	mailinatorInbox = "https://api.mailinator.com/api/inbox?to=" + currentEmail + "&token=" + APITOKEN
 	print("curling " + mailinatorInbox)
 
 	time.sleep(5)
