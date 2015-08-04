@@ -25,6 +25,10 @@ while(True):
 
 	time.sleep(5)
 	response = requests.get(mailinatorInbox)
+	while not response:
+		time.sleep(2)
+		response = requests.get(mailinatorInbox)
+	
 	json_data = json.loads(response.text)
 
 	emailID = None
