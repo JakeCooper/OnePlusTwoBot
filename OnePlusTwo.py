@@ -5,7 +5,7 @@ import json
 import re
 import time
 
-RESERVATIONID = "" #5-character reservation ID
+RESERVATIONID = "" #5to6-character reservation ID
 APITOKEN = "" # Mailinator API Token
 
 def generateString():
@@ -44,7 +44,7 @@ while(True):
 	if not emailID:
 		continue
 
-	mailinatorMessage = "https://api.mailinator.com/api/email?id=" + emailID + "&token=" + apiToken
+	mailinatorMessage = "https://api.mailinator.com/api/email?id=" + emailID + "&token=" + APITOKEN
 	response = requests.get(mailinatorMessage)
 	json_data = json.loads(response.text)
 	content = json_data["data"]["parts"][0]["body"]
