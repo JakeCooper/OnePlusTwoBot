@@ -48,7 +48,7 @@ while(True):
 	if not emailID:
 		continue
 
-	mailinatorMessage = "https://api.mailinator.com/api/email?id=" + emailID + "&token=" + apiToken
+	mailinatorMessage = "https://api.mailinator.com/api/email?id=" + emailID + "&token=" + APITOKEN
 	response = requests.get(mailinatorMessage)
 	json_data = json.loads(response.text)
 	content = json_data["data"]["parts"][0]["body"]
