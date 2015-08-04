@@ -24,11 +24,22 @@ while(True):
 	response = requests.get(mailinatorInbox)
 	json_data = json.loads(response.text)
 
-	for message in json_data["messages"]:
-		if message["subject"] == "Confirm your email":
-			emailID = message["id"]
+	emailID = None
+	for i in range(0, 5):
+		response = requests.get(mailinatorInbox)
+		json_data = json.loads(response.text)
 
-	if emailID is None:
+		for message in json_data["messages"]:
+			if message["subject"] == "Confirm your email":
+				emailID = message["id"]
+
+		if emailID:
+			break
+
+		#print('sleep')
+		time.sleep(1)
+
+	if not emailID:
 		continue
 
 	mailinatorMessage = "https://api.mailinator.com/api/email?id=" + emailID + "&token=" + apiToken
