@@ -29,5 +29,6 @@ Steps to use :
 Steps to use:
 
 1. Fill in ```INVITE_TOKEN``` at line 9
+1. (Optional) Change how long do you want to wait for the email to arrive ```EMAIL_CHECK_TIMEOUT``` at line 10
 1. Download and install Requests (http://docs.python-requests.org/en/latest/)
 1. Run! (`python GuerrillaMailExploit.py`)
