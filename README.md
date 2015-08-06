@@ -25,7 +25,8 @@ https://medium.com/@JakeCooper/so-nice-i-did-it-twice-hacking-the-oneplus-reserv
 
 ### Method 2
 1. Run GmailExploit2.py
-2. Enter your email WITHOUT @gmail.com when prompted.
+2. Enter your email WITH @gmail.com when prompted.
+3. Enter your referral code (5-6 digits found on the end of your referral link)
 3. Run EmailParser.py
 4. Enter your email WITH @gmail.com.
 5. Enter your password
