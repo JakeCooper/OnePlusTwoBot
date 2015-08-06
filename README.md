@@ -31,6 +31,8 @@ https://medium.com/@JakeCooper/so-nice-i-did-it-twice-hacking-the-oneplus-reserv
 4. Enter your email WITH @gmail.com.
 5. Enter your password
 
+Note: EmailParser.py won't work if you have 2-step authentication ON. For the time being, disable it and then run it
+
 ## GuerrillaMail Exploit (working as of 8.4.2015)
 
 Steps to use:
