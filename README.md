@@ -32,3 +32,17 @@ Steps to use:
 1. (Optional) Change how long do you want to wait for the email to arrive ```EMAIL_CHECK_TIMEOUT``` at line 10
 1. Download and install Requests (http://docs.python-requests.org/en/latest/)
 1. Run! (`python GuerrillaMailExploit.py`)
+
+
+## gmailClicker - OnePlusTwo
+Click on the confirmation link in a gmail message
+
+Steps to use :
+
+1. Insert your email adress and your password (line 38)
+
+2. Install pip if it is not all done
+
+3. Install request package -> pip install requests 
+
+4. run it 
