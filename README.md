@@ -39,6 +39,7 @@ Steps to use:
 2. (Optional) Change how long do you want to wait for the email to arrive ```EMAIL_CHECK_TIMEOUT``` at line 10
 3. Download and install Requests (http://docs.python-requests.org/en/latest/)
 4. Run! (`python GuerrillaMailExploit.py`)
+
 ##Additional Components
 
 ### gmailClicker - OnePlusTwo
