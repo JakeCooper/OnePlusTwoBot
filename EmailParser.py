@@ -15,7 +15,7 @@ EMAIL = input("Email : ")
 PASSWORD = input("Password : ")
 def processMailbox(M):
 	M.select()
-	typ, data = M.search(None, 'SUBJECT "Confirm your email"')
+	typ, data = M.search(None, 'SUBJECT "Confirm your email"', '(BODY "OnePlus")')
 	for num in data[0].split():
 		typ, data = M.fetch(num, '(RFC822)')
 		msg = email.message_from_string(data[0][1].decode('utf-8'))
