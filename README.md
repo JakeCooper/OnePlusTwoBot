@@ -39,8 +39,9 @@ Steps to use:
 2. (Optional) Change how long do you want to wait for the email to arrive ```EMAIL_CHECK_TIMEOUT``` at line 10
 3. Download and install Requests (http://docs.python-requests.org/en/latest/)
 4. Run! (`python GuerrillaMailExploit.py`)
+##Additional Components
 
-## gmailClicker - OnePlusTwo
+### gmailClicker - OnePlusTwo
 Click on the confirmation link in a gmail message
 
 Steps to use :
@@ -49,3 +50,10 @@ Steps to use :
 2. Install pip if it is not all done
 3. Install request package -> pip install requests 
 4. run it 
+
+### EmailParser
+Parses emails and curls the confirmation link automatically.
+
+1. Run EmailParser.py
+2. Enter your email
+3. Enter your password.
