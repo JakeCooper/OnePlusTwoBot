@@ -24,6 +24,11 @@ https://medium.com/@JakeCooper/so-nice-i-did-it-twice-hacking-the-oneplus-reserv
 3. Click links in your gmail inbox (or add a python script to automate this)
 
 ### Method 2
+1. Run GmailExploit2.py
+2. Enter your email WITHOUT @gmail.com when prompted.
+3. Run EmailParser.py
+4. Enter your email WITH @gmail.com.
+5. Enter your password
 
 ## GuerrillaMail Exploit (working as of 8.4.2015)
 
