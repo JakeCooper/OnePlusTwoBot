@@ -14,13 +14,15 @@ function getRandomIntInclusive(min,max) {
 
 var x=function(){ 
 	setTimeout(function () {
-		id=getRandomIntInclusive(1,mailPart.length-1);
 		times=getRandomIntInclusive(1,10);
-		mailId=mailPart.substring(0,id);
-		for (var i = 0; i <1; i++) {
-			mailId+='.';
+		var mailId='';
+		for (var i = 0; i< mailPart.length; i++) {
+			mailId+=mailPart.substring(i,i+1);
+			len=getRandomIntInclusive(0,1);
+			if(len!=0 && i!=mailPart.length-1)
+				mailId+='.';
 		};
-		mailId+=mailPart.substring(id)+mailDomain;
+		mailId+=mailDomain;
 		console.log(mailId);
 		https.get("https://invites.oneplus.net/index.php?r=share/signup&success_jsonpCallback=success_jsonpCallback&email="+mailId+"&koid="+oneplusId,function(res1){
 
