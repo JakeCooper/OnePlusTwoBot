@@ -12,18 +12,20 @@ function getRandomIntInclusive(min,max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+var count=1;
 var x=function(){ 
 	setTimeout(function () {
 		times=getRandomIntInclusive(1,10);
 		var mailId='';
+		var index=mailPart.indexOf('.');
 		for (var i = 0; i< mailPart.length; i++) {
 			mailId+=mailPart.substring(i,i+1);
 			len=getRandomIntInclusive(0,1);
-			if(len!=0 && i!=mailPart.length-1)
+
+			if(len!=0 && i!=mailPart.length-1 && i!=index && i!=index-1)
 				mailId+='.';
 		};
 		mailId+=mailDomain;
-		console.log(mailId);
 		https.get("https://invites.oneplus.net/index.php?r=share/signup&success_jsonpCallback=success_jsonpCallback&email="+mailId+"&koid="+oneplusId,function(res1){
 
 
@@ -32,7 +34,12 @@ var x=function(){
 				data+=d;
 			});
 			res1.on('end',function(e){
-				console.log(data);
+				if(data.indexOf('success_jsonpCallback')!=-1){
+					console.log(mailId+' with counter value '+count);	
+					count++;
+				}else{
+					console.log('randomising');
+				}
 				x();
 			});
 
