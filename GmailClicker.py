@@ -25,14 +25,17 @@ def manipulatePayload(payload):
     m=re.search('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+\.', str(payload.get_payload(None,True)))
     newURL = m.group(0).rstrip(".")
     print("Sending confirmation request to " + newURL)
-    res = requests.get(m.group(0).rstrip("."))
-    if res.status_code == 200:
-        print("Referal successfully spoofed")
-    else :
-        print("Hamsters are dead")
-    print()
-    time.sleep(5)
-    return
+    while True:
+        try:
+            res = requests.get(m.group(0).rstrip("."), timeout=1)
+            if res.status_code == 200:
+                print("Referral successfully spoofed")
+            else :
+                print("Request failed. "+str(res.status_code))
+            time.sleep(5)
+            return
+        except:
+            continue
 
 M= imaplib.IMAP4_SSL('imap.gmail.com')
 
