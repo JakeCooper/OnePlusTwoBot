@@ -1,16 +1,23 @@
 # OnePlusTwo
 
 ## Mailinator Exploit (no longer working)
-
 Context, Part 1:
 
 https://medium.com/@JakeCooper/how-i-hacked-the-oneplus-reservation-system-120ea1a7ad82
 
+### Python (MailinatorExploit.py)
 Steps to use :
 
 1. Fill in ```RESERVATIONID``` and ```APITOKEN``` at line 8-9
 2. Download and install Requests (http://docs.python-requests.org/en/latest/)
 3. Run! (`python MailinatorExploit.py`)
+
+### Javascript (mailinator.js)                                                  
+1)Fill in ```RESERVATIONID``` at line 7                                                       
+2)Fill in ```APITOKEN```` at line 8                                                             
+3)Run the app using the command                                                        
+      node mailinator.js
+
 
 ## Gmail Exploit (working as of 8.4.2015)
 Context, Part 2:
