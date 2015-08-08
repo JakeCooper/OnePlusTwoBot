@@ -47,7 +47,10 @@ except imaplib.IMAP4.error:
 rv, mailboxes = M.list()
 if rv == 'OK' :
     print("Selecting Mailbox Inbox")
-    processMailbox(M)
+    while True:
+        processMailbox(M)
+        print "Waiting for a minute ..."
+        time.sleep(60)
     M.close()
 M.logout()
 
