@@ -22,7 +22,8 @@ def processMailbox(M):
             manipulatePayload(msg)
 
 def manipulatePayload(payload):
-    m=re.search('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+\.', str(payload.get_payload(None,True)))
+    m=re.search('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+\.',
+                str(payload.get_payload(None,True)))
     newURL = m.group(0).rstrip(".")
     print("Sending confirmation request to " + newURL)
     while True:
@@ -30,12 +31,13 @@ def manipulatePayload(payload):
             res = requests.get(m.group(0).rstrip("."), timeout=1)
             if res.status_code == 200:
                 print("Referral successfully spoofed")
-            else :
+                return
+            else:
                 print("Request failed. "+str(res.status_code))
-            time.sleep(5)
-            return
         except:
             continue
+        finally:
+            time.sleep(5)
 
 M= imaplib.IMAP4_SSL('imap.gmail.com')
 
