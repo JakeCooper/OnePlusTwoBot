@@ -8,8 +8,10 @@ import requests
 
 def processMailbox(M):
     M.select()
-    typ, data = M.search(None, 'SUBJECT', '"Confirm your email"')
-    for num in data[0].split():
+    typ, data = M.search(None, 'UnSeen', 'SUBJECT', '"Confirm your email"', 'FROM', 'invites@oneplus.net')
+    mails = data[0].split()
+    print "There are %i unseen invites!" % len(mails)
+    for num in mails:
         typ, data = M.fetch(num, '(RFC822)')
         msg = email.message_from_string(data[0][1].decode('utf-8'))
         if msg.is_multipart():
