@@ -40,6 +40,20 @@ https://medium.com/@JakeCooper/so-nice-i-did-it-twice-hacking-the-oneplus-reserv
 
 Note: EmailParser.py won't work if you have 2-step authentication ON. For the time being, disable it and then run it
 
+### Method 3
+    Note: You will need to enable GMAIL API:
+
+    - follow the instruction from https://developers.google.com/gmail/api/quickstart/python
+
+    - just save the client_secret.json on the same directory you are going to run the script
+
+1. Run! (`python GmailExploit3.py send_invites {your gmail address} {invite token} {cache_buster} [--dryrun]`)
+
+      \* [--dryrun] allow you to see the list of emails the invite will send to
+
+2. Wait until you received the email invites. Run! (`python GmailExploit3.py process_invites`)
+
+
 ## GuerrillaMail Exploit (working as of 8.4.2015)
 
 Steps to use:
