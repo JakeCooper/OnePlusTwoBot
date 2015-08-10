@@ -31,12 +31,13 @@ https://medium.com/@JakeCooper/so-nice-i-did-it-twice-hacking-the-oneplus-reserv
 3. Click links in your gmail inbox (or add a python script to automate this)
 
 ### Method 2
-1. Run GmailExploit2.py
-2. Enter your email WITH @gmail.com when prompted.
-3. Enter your referral code (5-6 digits found on the end of your referral link)
-3. Run EmailParser.py
-4. Enter your email WITH @gmail.com.
-5. Enter your password
+1. Download and install Requests (http://docs.python-requests.org/en/latest/)
+2. Run GmailExploit2.py
+3. Enter your email WITH @gmail.com when prompted.
+4. Enter your referral code (5-6 digits found on the end of your referral link)
+5. Run EmailParser.py
+6. Enter your email WITH @gmail.com.
+7. Enter your password
 
 Note: EmailParser.py won't work if you have 2-step authentication ON. For the time being, disable it and then run it
 
