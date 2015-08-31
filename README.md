@@ -13,13 +13,13 @@ Steps to use :
 3. Run! (`python MailinatorExploit.py`)
 
 ### Javascript (mailinator.js)                                                  
-1)Fill in ```RESERVATIONID``` at line 7                                                       
-2)Fill in ```APITOKEN```` at line 8                                                             
-3)Run the app using the command                                                        
+1)Fill in ```RESERVATIONID``` at line 7
+2)Fill in ```APITOKEN```` at line 8
+3)Run the app using the command
       node mailinator.js
 
 
-## Gmail Exploit (working as of 8.4.2015)
+## Gmail Exploit (no longer working)
 Context, Part 2:
 
 https://medium.com/@JakeCooper/so-nice-i-did-it-twice-hacking-the-oneplus-reservation-system-again-2e8226c45f9a
@@ -55,7 +55,7 @@ Note: EmailParser.py won't work if you have 2-step authentication ON. For the ti
 2. Wait until you received the email invites. Run! (`python GmailExploit3.py process_invites`)
 
 
-## GuerrillaMail Exploit (working as of 8.4.2015)
+## GuerrillaMail Exploit (no longer working)
 
 Steps to use:
 
@@ -82,3 +82,11 @@ Parses emails and curls the confirmation link automatically.
 1. Run EmailParser.py
 2. Enter your email
 3. Enter your password.
+
+### Bruteforce
+tries to bruteforce the Oneplus invite system.
+
+Steps to use:
+1. replace `email1` with your email and `password` with your password. this is used to claim the invite.
+2. replace `email2` with another (or the same) email. this is the email where the invites will be sent.
+3. run invite_bruteforce.py
